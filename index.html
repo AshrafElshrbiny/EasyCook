@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>EasyCook</title>
 </head>
@@ -12,31 +16,52 @@
     <header>
         <nav>
             <div class="container">
-                <a href="#" class="logo"><span class="logo-icon">E</span><span class="logo-text">asy <span class="logo-cook">Cook</span></span></a>
-                <form class="search-form">
-                    <button type="submit" class="search-btn">🔍</button>
-                    <input type="search" class="search-input" name="" id="" placeholder="Search recipes">
-                </form>
-                <button class="theme-toggle">🌙</button>
+                <a href="#" class="logo"><span class="logo-icon">E</span><span class="logo-text">asy <span
+                            class="logo-cook">Cook</span></span></a>
+
+                <div class="search-container">
+
+                    <form class="search-form">
+                        <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <input type="search" class="search-input" name="" id="" placeholder="Search recipes"
+                            autocomplete="off">
+                    </form>
+                    <div class="suggestions"></div>
+                </div>
+                <button class="theme-toggle">
+                    <i class="fa-solid fa-moon moon active"></i>
+                    <i class="fa-solid fa-sun sun"></i>
+                </button>
             </div>
         </nav>
     </header>
     <main>
         <section class="hero">
             <div class="container">
-                <div class="recipe-header">
-                    <div class="recipe-meta">
-                        <span class="recipe-category"></span>
-                        <span class="recipe-time"></span>
-                        <span class="recipe-difficulty"></span>
-                        <span class="recipe-servings"></span>
-                    </div>
-                    <div class="recipe-counter">
-                        <span></span>
-                    </div>
+                <div class="recipe-meta">
+                    <span class="recipe-category"></span>
+
+                    <span class="recipe-time"></span>
+
+                    <span class="dot">•</span>
+
+                    <span class="recipe-difficulty"></span>
+
+                    <span class="dot">•</span>
+
+                    <span class="recipe-servings"></span>
                 </div>
                 <h1 class="recipe-title"></h1>
-                <p class="recipe-info"></p>
+                <div class="description-row">
+                    <p class="recipe-info"></p>
+                    <div class="recipe-next">
+                        <button class="recipe-btn">Next Recipe</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
                 <article class="recipe-card">
                     <div class="recipe-image">
                         <img src="" alt="Recipe Image">
@@ -47,28 +72,49 @@
                     </div>
                     <div class="recipe-details">
                         <div class="recipe-tabs">
-                            <button class="tab active">Ingredients</button>
-                            <button class="tab">Instructions</button>
-                            <button class="tab">Nutrition</button>
-                            <button class="tab">Chef's Tips</button>
+                            <button class="tab active" data-tab="ingredients">
+                                <i class="fa-solid fa-jar-wheat"></i> Ingredients
+                            </button>
+
+                            <button class="tab" data-tab="instructions">
+                                <i class="fa-brands fa-readme"></i> Instructions
+                            </button>
+
+                            <button class="tab" data-tab="nutrition">
+                                <i class="fa-brands fa-nutritionix"></i> Nutrition
+                            </button>
+
+                            <button class="tab" data-tab="tips">
+                                <i class="fa-solid fa-marker"></i> Chef's Tips
+                            </button>
                         </div>
-                        <div class="tab-content"></div>
+                        <div class="tab-content">
+                            <div class="ingredients"></div>
+                            <div class="steps"></div>
+                            <div class="nutrition"></div>
+                            <div class="tips"></div>
+                        </div>
                     </div>
-                </article>
-                <div class="recipe-nav">
-                    <button class="next-recipe">Next Recipe</button>
-                    <div class="recipe-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span class="active"></span>
-                    </div>
-                </div>
+            </div>
+            </article>
+            <div class="image-modal">
+                <span class="close-image"></span>
+                <img class="modal-image" src="" alt="Recipe Image">
+            </div>
+            </div>
+
             </div>
         </section>
     </main>
-    <footer> <div class="container"> <p>© 2026 EasyCook. All rights reserved.</p> </div> </footer>
-    <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>© 2026 EasyCook. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./JS/render.js"></script>
+    <script src="./JS/api.js"></script>
+    <script src="./JS/script.js"></script>
+
 
 </body>
 
